@@ -9,6 +9,7 @@ from resources.processor import AsyncJsonProcessor
 
 @pytest.mark.asyncio
 @pytest.mark.integration
+@pytest.mark.processor
 async def test_processor_integration_creates_output_and_deletes_input(tmp_path: Path) -> None:
     """
     Integration test: processes a real JSON file using a mocked dispatcher and checks
@@ -37,6 +38,7 @@ async def test_processor_integration_creates_output_and_deletes_input(tmp_path: 
 
 @pytest.mark.asyncio
 @pytest.mark.integration
+@pytest.mark.processor
 async def test_processor_integration_handles_joke_task(tmp_path: Path) -> None:
     """
     Integration test: processes a 'joke' task using real file ops and a mocked dispatcher.
@@ -64,6 +66,7 @@ async def test_processor_integration_handles_joke_task(tmp_path: Path) -> None:
 
 @pytest.mark.asyncio
 @pytest.mark.integration
+@pytest.mark.processor
 async def test_processor_integration_handles_unknown_task_type(tmp_path: Path) -> None:
     """
     Integration test: processes unknown task types and writes the unchanged data to output.

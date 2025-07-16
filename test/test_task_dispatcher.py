@@ -9,6 +9,7 @@ from utils.logger import error_logger
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_preload_age_predictions_success() -> None:
@@ -27,6 +28,7 @@ async def test_preload_age_predictions_success() -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_handle_age_cached() -> None:
@@ -44,6 +46,7 @@ async def test_handle_age_cached() -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_handle_age_not_cached() -> None:
@@ -68,6 +71,7 @@ async def test_handle_age_not_cached() -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_handle_joke() -> None:
@@ -89,6 +93,7 @@ async def test_handle_joke() -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_handle_unknown_type() -> None:
@@ -106,6 +111,7 @@ async def test_handle_unknown_type() -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_handle_postman_error() -> None:
@@ -124,6 +130,7 @@ async def test_handle_postman_error() -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_handle_age_uses_cache(monkeypatch) -> None:
@@ -151,6 +158,7 @@ async def test_handle_age_uses_cache(monkeypatch) -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_preload_age_predictions_batch_error(caplog) -> None:
@@ -169,6 +177,7 @@ async def test_preload_age_predictions_batch_error(caplog) -> None:
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.dispatcher
 @respx.mock
 async def test_preload_age_predictions_caches_results() -> None:

@@ -9,6 +9,7 @@ import main
 
 @pytest.mark.asyncio
 @pytest.mark.integration
+@pytest.mark.main
 def test_main_processes_json_file(tmp_path: Path) -> None:
     """
     Integration test for main() that processes real JSON file using mock API client.

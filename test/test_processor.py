@@ -8,6 +8,7 @@ from resources.processor import AsyncJsonProcessor
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.processor
 @pytest.mark.parametrize(
     "task_data,expected_response",
@@ -48,6 +49,7 @@ async def test_process_file_types(
 
 
 @pytest.mark.asyncio
+@pytest.mark.unit
 @pytest.mark.processor
 async def test_process_file_with_unexpected_task_type(tmp_path: Path) -> None:
     """

@@ -8,6 +8,7 @@ from managers.file_manager import AsyncFileManager
 pytestmark = pytest.mark.asyncio
 
 
+@pytest.mark.unit
 @pytest.mark.fileio
 @pytest.mark.parametrize(
     "test_data",
@@ -31,6 +32,7 @@ async def test_write_and_read_json(tmp_path: Path, test_data: dict):
     assert data == test_data
 
 
+@pytest.mark.unit
 @pytest.mark.fileio
 async def test_delete_file(tmp_path: Path):
     """
@@ -44,6 +46,7 @@ async def test_delete_file(tmp_path: Path):
     assert not test_file.exists()
 
 
+@pytest.mark.unit
 @pytest.mark.fileio
 async def test_get_json_files(tmp_path: Path):
     """

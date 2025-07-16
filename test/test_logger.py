@@ -24,6 +24,7 @@ def mock_handlers() -> tuple[MagicMock, MagicMock]:
         yield mock_file, mock_stream
 
 
+@pytest.mark.unit
 @pytest.mark.logger
 def test_setup_logger_adds_handlers(mock_handlers: tuple[MagicMock, MagicMock]) -> None:
     """
@@ -46,6 +47,7 @@ def test_setup_logger_adds_handlers(mock_handlers: tuple[MagicMock, MagicMock]) 
     assert mock_stream.setFormatter.called, "StreamHandler formatter not set"
 
 
+@pytest.mark.unit
 @pytest.mark.logger
 def test_setup_logger_without_console(monkeypatch) -> None:
     """
