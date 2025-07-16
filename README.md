@@ -4,7 +4,6 @@
 
 Integration File Processor is an asynchronous Python-based tool for automating the processing of JSON files placed in nested folders within an `INPUT/` directory. Each JSON file defines a task type and is processed accordingly, making use of public APIs. The output is stored as a new JSON file and the original file is deleted upon success.
 
----
 
 ## Features
 
@@ -17,7 +16,6 @@ Integration File Processor is an asynchronous Python-based tool for automating t
 - Writes output JSON files with a suffix and removes originals
 - Logs processing info and errors to separate log files
 
----
 
 ## Setup Instructions
 
@@ -52,9 +50,6 @@ pip install -r requirements.txt
   # Scheduler configuration
   PROCESS_TIME=<HH:MM>                     # Time of day to trigger processing (e.g. 18:10)
 
-
----
-
 ## Usage
 
 Usage
@@ -69,8 +64,6 @@ python main.py
 ```
 
 This will process all `.json` files immediately and exit after completion.
-
----
 
 ## Scheduled Execution Options
 
@@ -109,8 +102,6 @@ Create a daily task with:
 * Trigger: Daily at `18:10`
 * Action: `python path\to\run_scheduler.py`
 
----
-
 ## Example Input
 
 ```json
@@ -121,14 +112,10 @@ Create a daily task with:
 }
 ```
 
----
-
 ## Logs
 
 * `logs/info.log`: records processing time and status for each file
 * `logs/error.log`: records any encountered errors
-
----
 
 ## Running Tests
 
@@ -144,7 +131,5 @@ Run specific test types (with markers):
 pytest -m "unit"
 pytest -m "integration"
 ```
-
----
 
 
