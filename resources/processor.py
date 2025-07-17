@@ -3,7 +3,6 @@ import time
 from pathlib import Path
 from typing import List, Tuple
 
-from config.settings import INPUT_DIR
 from managers.file_manager import AsyncFileManager
 from services.task_dispatcher import AsyncTaskDispatcher
 from utils.logger import info_logger, error_logger
