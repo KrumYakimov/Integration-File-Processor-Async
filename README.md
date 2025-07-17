@@ -1,5 +1,11 @@
 # Integration File Processor (Async)
 
+![Python](https://img.shields.io/badge/python-3.11-blue)
+![Async](https://img.shields.io/badge/async-enabled-green)
+![License](https://img.shields.io/github/license/KrumYakimov/Integration-File-Processor-Async)
+![Last Commit](https://img.shields.io/github/last-commit/KrumYakimov/Integration-File-Processor-Async)
+
+
 ## Description
 
 Integration File Processor is an asynchronous Python-based tool for automating the processing of JSON files placed in nested folders within an `INPUT/` directory. Each JSON file defines a task type and is processed accordingly, making use of public APIs. The output is stored as a new JSON file and the original file is deleted upon success.
@@ -129,5 +135,8 @@ Run specific test types (with markers):
 pytest -m "unit"
 pytest -m "integration"
 ```
+
+## License
+This project is licensed under the **MIT License**.
 
 
