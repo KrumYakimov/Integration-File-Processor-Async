@@ -2,6 +2,7 @@ from typing import Any, Dict, List, Tuple
 
 from services.api_clients import AgifyClient, JokeClient, PostmanClient
 from utils.logger import info_logger, error_logger
+from validators.input_validator import InputValidator
 
 
 class AsyncTaskDispatcher:
@@ -50,6 +51,9 @@ class AsyncTaskDispatcher:
         :return: Processed result posted through PostmanClient.
         :raises Exception: If any error occurs during processing.
         """
+
+        InputValidator.validate(data)
+
         task_type: str = data.get("type", "").lower()
         name: str = data.get("name", "")
         country: str = data.get("country", "").upper()
