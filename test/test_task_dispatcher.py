@@ -102,18 +102,18 @@ async def test_handle_joke() -> None:
 @respx.mock
 async def test_handle_unknown_type() -> None:
     """Test handling of unknown message types."""
-    input_data = {"type": "unknown", "message": "Hello"}
+    input_data = {
+        "type": "other",
+        "name": "Test",
+        "country": "BG"
+    }
 
     respx.post("https://postman-echo.com/post").mock(
         return_value=Response(200, json={"json": input_data})
     )
 
     dispatcher = AsyncTaskDispatcher()
-    result = await dispatcher.handle({
-        "type": "other",
-        "name": "Test",
-        "country": "BG"
-    })
+    result = await dispatcher.handle(input_data)
     assert result == input_data
 
 
