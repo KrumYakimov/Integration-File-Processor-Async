@@ -55,7 +55,15 @@ pip install -r requirements.txt
 Usage
 - Create the INPUT/ directory in the root folder.
 
-- Place one or more subdirectories inside, each containing .json task files.
+- Place one or more subdirectories inside, each containing .json task files. Example input:
+
+```json
+{
+  "name": "Maria",
+  "type": "<task_type>",
+  "country": "BG"
+}
+```
 
 - Run the processor:
 
@@ -101,16 +109,6 @@ Create a daily task with:
 
 * Trigger: Daily at `18:10`
 * Action: `python path\to\run_scheduler.py`
-
-## Example Input
-
-```json
-{
-  "name": "Maria",
-  "type": "<task_type>",
-  "country": "BG"
-}
-```
 
 ## Logs
 
