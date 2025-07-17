@@ -86,7 +86,11 @@ async def test_handle_joke() -> None:
     )
 
     dispatcher = AsyncTaskDispatcher()
-    result = await dispatcher.handle({"type": "joke"})
+    result = await dispatcher.handle({
+        "type": "joke",
+        "name": "Test",
+        "country": "BG"
+    })
 
     assert "setup" in result
     assert "punchline" in result
@@ -105,8 +109,11 @@ async def test_handle_unknown_type() -> None:
     )
 
     dispatcher = AsyncTaskDispatcher()
-    result = await dispatcher.handle(input_data)
-
+    result = await dispatcher.handle({
+        "type": "other",
+        "name": "Test",
+        "country": "BG"
+    })
     assert result == input_data
 
 
