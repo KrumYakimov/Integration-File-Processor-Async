@@ -4,7 +4,7 @@ import pytest
 import respx
 from httpx import Response
 
-from services.task_dispatcher import AsyncTaskDispatcher
+from managers.task_dispatcher import AsyncTaskDispatcher
 from utils.logger import error_logger
 
 
