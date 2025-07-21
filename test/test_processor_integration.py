@@ -24,7 +24,7 @@ async def test_processor_integration_creates_output_and_deletes_input(tmp_path: 
     mock_dispatcher.handle = AsyncMock(return_value=expected_output)
 
     processor = AsyncJsonProcessor()
-    await processor.process_file(mock_dispatcher, input_file)
+    await processor.process_file(mock_dispatcher, input_file, input_data)
 
     output_file = tmp_path / "test_input_processed.json"
     assert not input_file.exists()
@@ -52,7 +52,7 @@ async def test_processor_integration_handles_joke_task(tmp_path: Path) -> None:
     mock_dispatcher.handle = AsyncMock(return_value=expected_output)
 
     processor = AsyncJsonProcessor()
-    await processor.process_file(mock_dispatcher, input_file)
+    await processor.process_file(mock_dispatcher, input_file, input_data)
 
     output_file = tmp_path / "joke_input_processed.json"
     assert not input_file.exists()
@@ -79,7 +79,7 @@ async def test_processor_integration_handles_unknown_task_type(tmp_path: Path) -
     mock_dispatcher.handle = AsyncMock(return_value=input_data)
 
     processor = AsyncJsonProcessor()
-    await processor.process_file(mock_dispatcher, input_file)
+    await processor.process_file(mock_dispatcher, input_file, input_data)
 
     output_file = tmp_path / "unknown_task_processed.json"
     assert not input_file.exists()
