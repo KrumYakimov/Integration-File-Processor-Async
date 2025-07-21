@@ -52,8 +52,6 @@ class AsyncTaskDispatcher:
         :raises Exception: If any error occurs during processing.
         """
 
-        InputValidator.validate(data)
-
         task_type: str = data.get("type", "").lower()
         name: str = data.get("name", "")
         country: str = data.get("country", "").upper()
