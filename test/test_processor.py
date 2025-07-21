@@ -39,7 +39,7 @@ async def test_process_file_types(
     ) as mock_delete:
 
         processor = AsyncJsonProcessor()
-        await processor.process_file(mock_dispatcher, test_file)
+        await processor.process_file(mock_dispatcher, test_file, task_data)
 
         output_file = test_file.with_name(f"{test_file.stem}_processed.json")
 
@@ -71,7 +71,7 @@ async def test_process_file_with_unexpected_task_type(tmp_path: Path) -> None:
     ) as mock_delete:
 
         processor = AsyncJsonProcessor()
-        await processor.process_file(mock_dispatcher, test_file)
+        await processor.process_file(mock_dispatcher, test_file, test_data)
 
         output_file = test_file.with_name("unexpected_processed.json")
 
