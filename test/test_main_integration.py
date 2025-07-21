@@ -7,7 +7,6 @@ import pytest
 import main
 
 
-@pytest.mark.asyncio
 @pytest.mark.integration
 @pytest.mark.main
 def test_main_processes_json_file(tmp_path: Path) -> None:
@@ -18,7 +17,7 @@ def test_main_processes_json_file(tmp_path: Path) -> None:
     input_dir.mkdir()
 
     test_file = input_dir / "test.json"
-    test_data = {"type": "joke"}
+    test_data = {"type": "joke", "name": "John", "country": "US"}
     expected_response = {"joke": "Mocked joke"}
 
     test_file.write_text(json.dumps(test_data), encoding="utf-8")
