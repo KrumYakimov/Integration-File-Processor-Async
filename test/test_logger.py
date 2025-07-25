@@ -66,5 +66,3 @@ def test_setup_logger_without_console(monkeypatch) -> None:
         assert any(isinstance(h, MagicMock) for h in logger.handlers)
         assert mock_file.setFormatter.called
         mock_stream_handler.assert_not_called()
-
-
