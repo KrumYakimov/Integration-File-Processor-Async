@@ -2,7 +2,6 @@ from typing import Any, Dict, List, Tuple
 
 from services.api_clients import AgifyClient, JokeClient, PostmanClient
 from utils.logger import info_logger, error_logger
-from validators.input_validator import InputValidator
 
 
 class AsyncTaskDispatcher:
@@ -16,7 +15,7 @@ class AsyncTaskDispatcher:
         self.postman_client = PostmanClient()
 
     async def preload_age_predictions(
-        self, name_country_pairs: List[Tuple[str, str]]
+            self, name_country_pairs: List[Tuple[str, str]]
     ) -> None:
         """
         Preload and cache age predictions for batches of (name, country) pairs.
@@ -30,7 +29,7 @@ class AsyncTaskDispatcher:
 
         for country, names in country_groups.items():
             for i in range(0, len(names), 10):
-                batch = names[i : i + 10]
+                batch = names[i: i + 10]
                 try:
                     results = await self.agify_client.get_batch_ages(batch, country)
                     info_logger.info(
