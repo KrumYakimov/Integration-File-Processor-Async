@@ -7,7 +7,17 @@
 
 📄 [Online Documentation](https://krumyakimov.github.io/Integration-File-Processor-Async/)
 
+This project demonstrates the design and implementation of an **integration service** that automates JSON file processing and communication with external REST APIs.
 
+It showcases:
+
+* **System integration** – consuming and posting data via public APIs.
+*  **Automation & scheduling** – processing tasks at scale (up to hundreds of thousands of files daily).
+*  **Modular architecture (MVC)** – separation of concerns for maintainability and extensibility.
+*  **Resilience** – structured logging for monitoring and troubleshooting.
+*  **Quality assurance** – unit and integration tests included.
+
+This solution simulates real-world **backend integration scenarios** where data pipelines must reliably process, enrich, and forward information between systems.
 
 ## Description
 
